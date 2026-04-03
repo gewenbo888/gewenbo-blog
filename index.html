@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gewenbo Blog — AI, Technology & Culture</title>
+<meta name="description" content="Bilingual blog on AI tools, emerging technology, cross-cultural comparisons, and the intersection of Eastern philosophy and modern science. 双语博客：AI工具、新兴技术、跨文化比较。">
+<meta property="og:title" content="Gewenbo Blog — AI, Technology & Culture">
+<meta property="og:description" content="Bilingual insights on AI, tech, culture, and philosophy.">
+<meta property="og:type" content="website">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Gewenbo Blog">
+<meta name="twitter:description" content="Bilingual blog on AI, technology, culture, and philosophy.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><rect width='64' height='64' rx='16' fill='%23fafaf8'/><text x='32' y='42' text-anchor='middle' font-family='serif' font-size='28' font-weight='700' fill='%230a0a0a'>G</text></svg>">
+<script defer src="https://analytics-dashboard-two-blue.vercel.app/tracker.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;0,6..72,600;1,6..72,300;1,6..72,400&family=Manrope:wght@300;400;500;600;700&family=Noto+Serif+SC:wght@300;400;600&family=JetBrains+Mono:wght@300;400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#fafaf8;--bg2:#f2f0ec;--ink:#1a1a1a;--ink2:#444;--dim:#999;
+  --accent:#c44;--accent-bg:rgba(204,68,68,.05);
+  --rule:rgba(0,0,0,.06);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  background:var(--bg);color:var(--ink);
+  font-family:'Newsreader',serif;font-weight:300;line-height:1.85;
+  -webkit-font-smoothing:antialiased;
+}
+.cn{font-family:'Noto Serif SC',serif;}
+a{color:var(--ink);text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--rule);}
+a:hover{text-decoration-color:var(--ink);}
+
+/* ═══ HEADER ═══ */
+header{
+  max-width:680px;margin:0 auto;padding:28px 24px 20px;
+  display:flex;align-items:center;justify-content:space-between;
+  border-bottom:1px solid var(--rule);
+}
+.blog-logo{font-family:'Manrope',sans-serif;font-weight:700;font-size:.9rem;text-decoration:none;color:var(--ink);}
+.blog-nav{display:flex;gap:16px;}
+.blog-nav a{font-family:'Manrope',sans-serif;font-size:.75rem;font-weight:500;color:var(--dim);text-decoration:none;transition:color .2s;}
+.blog-nav a:hover{color:var(--ink);}
+
+/* ═══ HERO ═══ */
+.blog-hero{
+  max-width:680px;margin:0 auto;padding:60px 24px 40px;
+  border-bottom:1px solid var(--rule);
+}
+.blog-hero h1{font-size:clamp(1.8rem,4vw,2.8rem);font-weight:300;line-height:1.2;letter-spacing:-.02em;}
+.blog-hero .sub{font-size:.95rem;color:var(--dim);margin-top:12px;max-width:500px;}
+.blog-hero .sub-cn{font-family:'Noto Serif SC',serif;font-size:.85rem;color:var(--dim);margin-top:6px;}
+
+/* Subscribe box */
+.subscribe{
+  margin-top:28px;display:flex;gap:8px;max-width:400px;
+}
+.subscribe input{
+  flex:1;padding:10px 14px;border:1px solid var(--rule);border-radius:8px;
+  font-family:'Manrope',sans-serif;font-size:.82rem;background:var(--bg);
+  outline:none;transition:border-color .2s;
+}
+.subscribe input:focus{border-color:#aaa;}
+.subscribe button{
+  padding:10px 20px;border:none;border-radius:8px;
+  background:var(--ink);color:#fff;font-family:'Manrope',sans-serif;
+  font-size:.78rem;font-weight:600;cursor:pointer;transition:background .2s;
+  white-space:nowrap;
+}
+.subscribe button:hover{background:#333;}
+
+/* ═══ POSTS ═══ */
+.posts{max-width:680px;margin:0 auto;padding:0 24px;}
+.post{padding:36px 0;border-bottom:1px solid var(--rule);}
+.post:last-child{border-bottom:none;}
+.post-meta{
+  font-family:'JetBrains Mono',monospace;font-size:.6rem;
+  color:var(--dim);letter-spacing:.06em;margin-bottom:8px;
+  display:flex;gap:12px;align-items:center;
+}
+.post-tag{
+  font-family:'Manrope',sans-serif;font-size:.55rem;font-weight:600;
+  letter-spacing:.06em;text-transform:uppercase;
+  padding:2px 8px;border-radius:4px;background:var(--accent-bg);color:var(--accent);
+}
+.post h2{font-size:clamp(1.2rem,2.5vw,1.6rem);font-weight:400;line-height:1.3;letter-spacing:-.01em;margin-bottom:6px;}
+.post h2 a{text-decoration:none;}
+.post h2 a:hover{text-decoration:underline;text-decoration-color:var(--rule);}
+.post .post-cn{font-family:'Noto Serif SC',serif;font-size:.9rem;color:var(--dim);margin-bottom:10px;}
+.post p{font-size:.95rem;color:var(--ink2);}
+.post .read-more{
+  display:inline-block;margin-top:12px;
+  font-family:'Manrope',sans-serif;font-size:.75rem;font-weight:600;
+  color:var(--accent);text-decoration:none;
+}
+.post .read-more:hover{text-decoration:underline;}
+
+/* ═══ FOOTER ═══ */
+footer{
+  max-width:680px;margin:0 auto;padding:40px 24px;
+  border-top:1px solid var(--rule);text-align:center;
+}
+footer p{font-size:.72rem;color:var(--dim);font-family:'Manrope',sans-serif;}
+.footer-links{display:flex;gap:16px;justify-content:center;margin-bottom:12px;}
+.footer-links a{font-family:'Manrope',sans-serif;font-size:.72rem;color:var(--dim);text-decoration:none;}
+.footer-links a:hover{color:var(--ink);}
+</style>
+</head>
+<body>
+
+<header>
+  <a class="blog-logo" href="/">Gewenbo</a>
+  <nav class="blog-nav">
+    <a href="https://gewenbo-hub.vercel.app">Projects</a>
+    <a href="https://gewenbo-links.vercel.app">Links</a>
+    <a href="https://github.com/gewenbo888">GitHub</a>
+  </nav>
+</header>
+
+<div class="blog-hero">
+  <h1>Thoughts on AI, Technology <em>&amp;</em> Culture</h1>
+  <div class="sub">Bilingual explorations at the intersection of artificial intelligence, Eastern philosophy, and the technologies reshaping our world.</div>
+  <div class="sub-cn">双语探索：人工智能、东方哲学与重塑世界的技术交汇之处。</div>
+
+  <div class="subscribe">
+    <input type="email" placeholder="your@email.com" id="emailInput">
+    <button onclick="document.getElementById('emailInput').value='';this.textContent='Subscribed!';setTimeout(()=>this.textContent='Subscribe',2000)">Subscribe</button>
+  </div>
+</div>
+
+<div class="posts">
+
+  <article class="post">
+    <div class="post-meta"><span class="post-tag">AI</span> Apr 3, 2026 &middot; 5 min read</div>
+    <h2><a href="https://ai-tools-guide-henna.vercel.app">The Only AI Tools Guide You Need in 2026</a></h2>
+    <div class="post-cn">2026年你唯一需要的AI工具指南</div>
+    <p>I cataloged 20+ AI tools across 8 categories — from ChatGPT to Suno to Claude Code — with step-by-step instructions in both Chinese and English. Here's what I learned about how each tool fits into a modern workflow, and when to reach for which one.</p>
+    <a class="read-more" href="https://ai-tools-guide-henna.vercel.app">Read the full guide &rarr;</a>
+  </article>
+
+  <article class="post">
+    <div class="post-meta"><span class="post-tag">Technology</span> Apr 2, 2026 &middot; 8 min read</div>
+    <h2><a href="https://tech-levels.vercel.app">Technology Levels L1–L5: A Framework for Understanding Progress</a></h2>
+    <div class="post-cn">技术等级L1–L5：理解进步的框架</div>
+    <p>From fossil fuels to Dyson spheres. From chat AI to civilization-organizing intelligence. I mapped 11 technological domains across 5 maturity levels to create a unified framework for understanding where we are and where we're heading.</p>
+    <a class="read-more" href="https://tech-levels.vercel.app">Explore the framework &rarr;</a>
+  </article>
+
+  <article class="post">
+    <div class="post-meta"><span class="post-tag">Culture</span> Apr 1, 2026 &middot; 12 min read</div>
+    <h2><a href="https://civilizations-compared.vercel.app">70 Historical Figures: When West Met East</a></h2>
+    <div class="post-cn">70位历史人物：当西方遇见东方</div>
+    <p>What happens when you pair Socrates with Laozi? Alexander with Qin Shi Huang? Shakespeare with Tang Xianzu (who both died in 1616)? I built an interactive bilingual comparison of 70+ Western and Chinese historical figures across 8 parallel eras — and the patterns that emerged surprised me.</p>
+    <a class="read-more" href="https://civilizations-compared.vercel.app">Read the comparison &rarr;</a>
+  </article>
+
+  <article class="post">
+    <div class="post-meta"><span class="post-tag">Cryptography</span> Mar 31, 2026 &middot; 6 min read</div>
+    <h2><a href="https://quantum-crypto-three.vercel.app">Why Quantum Computers Break Some Encryption But Not Others</a></h2>
+    <div class="post-cn">为什么量子计算机能破解某些加密而不能破解其他的</div>
+    <p>Shor's algorithm doesn't try every key — it detects hidden mathematical structure. Hash functions survive because they were built to have no structure. I made an animated visual explainer to show exactly why, with no math background required.</p>
+    <a class="read-more" href="https://quantum-crypto-three.vercel.app">See the explainer &rarr;</a>
+  </article>
+
+  <article class="post">
+    <div class="post-meta"><span class="post-tag">Philosophy</span> Mar 30, 2026 &middot; 7 min read</div>
+    <h2><a href="https://tao-science.vercel.app">The Tao of Science: Five Dimensions Where Ancient Wisdom Meets Physics</a></h2>
+    <div class="post-cn">道与科学：古老智慧与物理学交汇的五个维度</div>
+    <p>Tao = Evolution = I Ching = Binary = Taiji = Yin-Yang = Model. From Confucian ethics to string theory, I traced how five dimensions of reality — Human, Earth, Heaven, Tao, Nature — find expression in both Taoist philosophy and modern science.</p>
+    <a class="read-more" href="https://tao-science.vercel.app">Explore the dimensions &rarr;</a>
+  </article>
+
+  <article class="post">
+    <div class="post-meta"><span class="post-tag">Science</span> Mar 29, 2026 &middot; 10 min read</div>
+    <h2><a href="https://y-haplogroups.vercel.app">Your Y-Chromosome Tells a 270,000-Year Story</a></h2>
+    <div class="post-cn">你的Y染色体讲述了27万年的故事</div>
+    <p>Every man carries a genetic signature passed from father to son across millennia. I built an interactive guide to 26 Y-DNA haplogroups — from the Bushmen's ancient A lineage to the Celts' R1b — with a phylogenetic tree, filterable cards, and the migration story behind each branch.</p>
+    <a class="read-more" href="https://y-haplogroups.vercel.app">Trace the journey &rarr;</a>
+  </article>
+
+  <article class="post">
+    <div class="post-meta"><span class="post-tag">Geopolitics</span> Mar 28, 2026 &middot; 15 min read</div>
+    <h2><a href="https://three-regions.vercel.app">California, Guangdong, and Nigeria: Three Worlds, One Conversation</a></h2>
+    <div class="post-cn">加州、广东与尼日利亚：三个世界，一场对话</div>
+    <p>Silicon Valley designs, Shenzhen manufactures, Lagos disrupts with fintech. I compared these three powerhouse regions across 8 dimensions — technology, industry, lifestyle, cost of living, history, culture, and the surprising threads that connect them.</p>
+    <a class="read-more" href="https://three-regions.vercel.app">Read the comparison &rarr;</a>
+  </article>
+
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="https://gewenbo-hub.vercel.app">Portfolio</a>
+    <a href="https://gewenbo-links.vercel.app">Links</a>
+    <a href="https://github.com/gewenbo888">GitHub</a>
+    <a href="https://github.com/gewenbo888/gewenbo-blog">Source</a>
+  </div>
+  <p>gewenbo.eth &middot; &copy; 2026</p>
+</footer>
+
+</body>
+</html>
